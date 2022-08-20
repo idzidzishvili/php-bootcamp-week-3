@@ -96,10 +96,11 @@ if (strtolower($_SERVER['REQUEST_METHOD']) == 'post') {
 											<td class="td"><?= $crypto['symbol'] ?></td>
 											<td class="td"><?= $crypto['price'] ?></td>
 											<td class="td"><?= $crypto['max_supply']??null ?></td>
-											<td class="td relative">
-												<div class="z-10 relative"><?= $crypto['high'] ?></div>
-												<div class="z-0 absolute bottom-0 left-0 top-0" style="width:<?=(int)($crypto['price']/$crypto['high']*100);?>%; background-color:rgba(<?=255-(int)($crypto['price']/$crypto['high']*255);?>,<?=(int)($crypto['price']/$crypto['high']*255);?>,0,.85)">
+											<td class="border border-stone-500 p-0 relative bg-gradient-to-r from-red-600 via-yellow-400 to-green-500" >
+												<div class="z-10 relative">
+													<?= $crypto['high'] ?>
 												</div>
+												<div class="z-0 absolute bottom-0 right-0 top-0 bg-white" style="width:<?=100-(int)($crypto['price']/$crypto['high']*100);?>%"></div>
 											</td>
 										</tr>	
 									<?php endforeach; ?>					
